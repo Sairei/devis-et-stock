@@ -22,5 +22,16 @@ public interface Constantes {
     
     /** Table en base CLIENT **/
     public final static String tableClient = "CLIENT";
-    public final static String calClientId = "id_client";
+    public final static String colClientId = "id_client";
+    public final static String colClientGenre = "genre_client";
+    public final static String colClientNom = "nom_client";
+    public final static String colClientPrenom = "prenom_client";    
+    public final static String colClientAdresse = "adresse_client";    
+    public final static String colClientMail = "mail_client";    
+    public final static String colClientTelephone = "telephone_client";    
+    public final static String colClientIdMensuration = "ref_id_mensuration";    
+    
+    /** Table en base MENSURATION **/
+    public final static String tableMensuration = "Mensuration";
+    public final static String colMensurationId = "id_mensuration";
 }
