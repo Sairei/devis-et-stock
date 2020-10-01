@@ -6,34 +6,53 @@ public class ClientDAO {
     private String prenom;
     private String nom;
     private String adresse;
-    private String tel;
     private String mail;
+    private String tel;
+    private long id_mesuration;
+    
+    public ClientDAO(String genre, String nom, String prenom, String adresse, 
+    		String mail, String tel, long idMensuration) {
+    	this.civilite = genre;
+        this.prenom = nom;
+        this.nom = prenom;
+        this.adresse = adresse;
+        this.mail = mail;
+        this.tel = tel;
+        this.id_mesuration = idMensuration;
+    }
 
+    public void setId(long id) {
+    	this.id = id;
+    }
     public long getId() {
-        return id;
+        return this.id;
     }
 
     public String getCivilite() {
-        return civilite;
+        return this.civilite;
     }
 
     public String getPrenom() {
-        return prenom;
+        return this.prenom;
     }
 
     public String getNom() {
-        return nom;
+        return this.nom;
     }
 
     public String getAdresse() {
-        return adresse;
-    }
-
-    public String getTel() {
-        return tel;
+        return this.adresse;
     }
 
     public String getMail() {
-        return mail;
+        return this.mail;
+    }
+
+    public String getTel() {
+    	return this.tel;
+    }
+    
+    public long getIdMensuration() {
+    	return this.id_mesuration;
     }
 }
