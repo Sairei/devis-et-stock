@@ -3,13 +3,13 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="500.0" minWidth="800.0" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1"  fx:controller="main.accueil.AccueilController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="700.0" minWidth="500.0" prefHeight="700.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.accueil.AccueilController">
     <children>
         <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <top>
@@ -34,72 +34,83 @@
                                 </AnchorPane>
                             </top>
                             <center>
-                                <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                <AnchorPane maxHeight="5000.0" prefHeight="5000.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                                     <children>
-                                        <HBox layoutX="41.0" layoutY="135.0" prefHeight="70.0" prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                            <children>
+                              <VBox layoutX="5.0" prefHeight="5000.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+                                 <children>
                                                 <!-- AnchorPane titre et boutons coté devis -->
-                                                <AnchorPane prefHeight="200.0" prefWidth="5000.0" style="-fx-border-color: black;">
-                                                    <HBox.margin>
-                                                        <Insets bottom="-1.0" left="5.0" right="5.0" />
-                                                    </HBox.margin>
+                                                <AnchorPane prefHeight="5000.0" prefWidth="5000.0" style="-fx-border-color: black;">
                                                     <children>
-                                                        <Label alignment="CENTER" layoutX="29.0" layoutY="14.0" text="Liste des devis" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+                                                        <Label layoutX="29.0" layoutY="14.0" text="Devis" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
                                                             <font>
                                                                 <Font name="System Bold" size="12.0" />
                                                             </font>
                                                         </Label>
-                                                        <HBox layoutX="-52.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
-                                                            <children>
-                                                                <Label prefHeight="25.0" text="Ajouter un devis">
-                                                                    <HBox.margin>
-                                                                        <Insets left="5.0" right="5.0" />
-                                                                    </HBox.margin>
-                                                                </Label>
-                                                                <Button mnemonicParsing="false" onMouseClicked="#AddDevis" prefHeight="25.0" prefWidth="25.0" text="+" />
-                                                            </children>
-                                                        </HBox>
+                                          <ToolBar layoutX="14.0" layoutY="40.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="25.0">
+                                            <items>
+                                              <Button mnemonicParsing="false" text="Afficher la liste" />
+                                                <Button mnemonicParsing="false" text="+" />
+                                            </items>
+                                          </ToolBar>
+                                          <AnchorPane layoutY="-3.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="75.0">
+                                             <children>
+                                                <Label layoutX="526.0" layoutY="14.0" text="Informations" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children>
+                                          </AnchorPane>
                                                     </children>
+                                       <VBox.margin>
+                                          <Insets bottom="-1.0" />
+                                       </VBox.margin>
                                                 </AnchorPane>
                                                 <!-- AnchorPane titre et boutons coté main.stock -->
-                                                <AnchorPane prefHeight="200.0" prefWidth="5000.0" style="-fx-border-color: black;">
-                                                    <HBox.margin>
-                                                        <Insets bottom="-1.0" left="5.0" right="5.0" />
-                                                    </HBox.margin>
+                                                <AnchorPane prefHeight="5000.0" prefWidth="5000.0" style="-fx-border-color: black;">
                                                     <children>
-                                                        <Label alignment="CENTER" layoutX="59.0" layoutY="30.0" text="Stock actuel" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+                                                        <Label layoutX="59.0" layoutY="30.0" text="Stock" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
                                                             <font>
                                                                 <Font name="System Bold" size="12.0" />
                                                             </font>
                                                         </Label>
-                                                        <HBox prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="35.0">
-                                                            <children>
-                                                                <Label prefHeight="25.0" text="Ajouter un objet dans le main.stock">
-                                                                    <HBox.margin>
-                                                                        <Insets left="5.0" right="5.0" />
-                                                                    </HBox.margin>
-                                                                </Label>
-                                                                <Button mnemonicParsing="false" onMouseClicked="#AddStock" prefHeight="25.0" prefWidth="25.0" text="+" />
-                                                            </children>
-                                                        </HBox>
+                                          <ToolBar layoutX="14.0" layoutY="35.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="25.0">
+                                            <items>
+                                              <Button mnemonicParsing="false" text="Afficher la liste" />
+                                                <Button mnemonicParsing="false" text="+" />
+                                            </items>
+                                          </ToolBar>
+                                          <AnchorPane layoutX="-15.0" layoutY="-2.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="75.0">
+                                             <children>
+                                                <Label layoutX="437.0" layoutY="31.0" text="Informations" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="0.0" />
+                                             </children>
+                                          </AnchorPane>
                                                     </children>
+                                       <padding>
+                                          <Insets bottom="-1.0" top="-1.0" />
+                                       </padding>
                                                 </AnchorPane>
-                                            </children>
-                                        </HBox>
-                                        <HBox layoutX="31.0" layoutY="125.0" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="65.0">
-                                            <children>
-                                                <ListView fx:id="listeDevis" maxHeight="5000.0" maxWidth="5000.0" prefWidth="5000.0">
-                                                    <HBox.margin>
-                                                        <Insets bottom="5.0" left="5.0" right="5.0" />
-                                                    </HBox.margin>
-                                                </ListView>
-                                                <ListView fx:id="listeStock" maxHeight="5000.0" maxWidth="5000.0" prefWidth="5000.0">
-                                                    <HBox.margin>
-                                                        <Insets bottom="5.0" left="5.0" right="5.0" />
-                                                    </HBox.margin>
-                                                </ListView>
-                                            </children>
-                                        </HBox>
+                                    <AnchorPane prefHeight="5000.0" prefWidth="5000.0" style="-fx-border-color: black;">
+                                       <children>
+                                          <Label layoutX="29.0" layoutY="14.0" text="Clients" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="5.0">
+                                             <font>
+                                                <Font name="System Bold" size="12.0" />
+                                             </font>
+                                          </Label>
+                                          <ToolBar layoutX="14.0" layoutY="40.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="25.0">
+                                             <items>
+                                                <Button mnemonicParsing="false" text="Afficher la liste" />
+                                                <Button mnemonicParsing="false" text="+" />
+                                             </items>
+                                          </ToolBar>
+                                          <AnchorPane layoutY="-3.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="75.0">
+                                             <children>
+                                                <Label layoutX="526.0" layoutY="14.0" text="Informations" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                       <VBox.margin>
+                                          <Insets top="-1.0" />
+                                       </VBox.margin>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
                                     </children>
                                 </AnchorPane>
                             </center>

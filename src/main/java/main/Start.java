@@ -22,8 +22,8 @@ public class Start extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/accueil/accueil.fxml"));
         primaryStage.setTitle("Couture application");
         primaryStage.setScene(new Scene(root));
-        primaryStage.setMinHeight(400);
-        primaryStage.setMinWidth(700);
+        primaryStage.setMinHeight(700);
+        primaryStage.setMinWidth(500);
         primaryStage.show();
     }
 
