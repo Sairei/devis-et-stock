@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.client.NouveauClientController">
+   <children>
+      <BorderPane layoutX="28.0" layoutY="23.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <bottom>
+            <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <items>
+       			<Button mnemonicParsing="false" onAction="#saveClient" text="Enregistrer" />
+                <Button mnemonicParsing="false" onAction="#cancel" text="Annuler" />
+              </items>
+            </ToolBar>
+         </bottom>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox layoutX="22.0" layoutY="23.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="20.0">
+                     <children>
+                        <RadioButton fx:id="homme" mnemonicParsing="false" text="Homme">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                           <toggleGroup>
+                              <ToggleGroup fx:id="civilite" />
+                           </toggleGroup>
+                        </RadioButton>
+                        <RadioButton fx:id="femme" mnemonicParsing="false" text="Femme" toggleGroup="$civilite" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="62.0" layoutY="111.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="50.0">
+                     <children>
+                        <VBox>
+                           <children>
+                              <Label text="Nom" />
+                              <TextField fx:id="nom" prefWidth="5000.0" />
+                           </children>
+                           <HBox.margin>
+                              <Insets right="15.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Prénom" />
+                              <TextField fx:id="prenom" prefWidth="5000.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox layoutX="81.0" layoutY="146.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="105.0">
+                     <children>
+                        <Label text="Adresse" />
+                        <TextField fx:id="adresse" />
+                     </children>
+                  </VBox>
+                  <HBox layoutX="91.0" layoutY="156.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="160.0">
+                     <children>
+                        <VBox>
+                           <children>
+                              <Label text="Code postal" />
+                              <TextField fx:id="code_postal" prefWidth="4950.0">
+                                 <VBox.margin>
+                                    <Insets right="15.0" />
+                                 </VBox.margin>
+                              </TextField>
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Label text="Ville" />
+                              <TextField fx:id="ville" prefWidth="5000.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <VBox layoutX="91.0" layoutY="156.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="215.0">
+                     <children>
+                        <Label text="Mail" />
+                        <TextField fx:id="mail" />
+                     </children>
+                  </VBox>
+                  <VBox layoutX="91.0" layoutY="156.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="270.0">
+                     <children>
+                        <Label text="Téléphone" />
+                        <TextField fx:id="telephone" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
