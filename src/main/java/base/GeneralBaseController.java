@@ -1,7 +1,7 @@
-package main.base;
+package base;
 
-import main.common.Constantes;
-import main.common.MethodesCommunes;
+import common.Constantes;
+import common.MethodesCommunes;
 
 public class GeneralBaseController {
     public void start() {

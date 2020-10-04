@@ -1,4 +1,4 @@
-package main.devis;
+package devis;
 
 public class LigneDevisDAO {
 

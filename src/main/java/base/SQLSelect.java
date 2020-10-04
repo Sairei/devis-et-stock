@@ -1,11 +1,11 @@
-package main.base;
+package base;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import main.common.Constantes;
+import common.Constantes;
 
 public class SQLSelect {
 	/** SELECT pour la table DEVIS **/

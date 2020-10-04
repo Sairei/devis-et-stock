@@ -1,4 +1,4 @@
-package main.common;
+package common;
 
 public enum StatutDevis {
 	ATTENTE_PAIEMENT,

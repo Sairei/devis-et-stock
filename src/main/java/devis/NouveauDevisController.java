@@ -1,4 +1,4 @@
-package main.devis;
+package devis;
 
 import java.io.IOException;
 import java.sql.ResultSet;
@@ -6,6 +6,10 @@ import java.sql.SQLException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+import base.SQLInsert;
+import base.SQLSelect;
+import client.ClientDAO;
+import common.Constantes;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -15,10 +19,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import main.base.SQLInsert;
-import main.base.SQLSelect;
-import main.client.ClientDAO;
-import main.common.Constantes;
 
 public class NouveauDevisController {
 	@FXML

@@ -1,8 +1,8 @@
-package main.base;
+package base;
 
 import java.sql.*;
 
-import main.common.Constantes;
+import common.Constantes;
 
 public class SQLConnexion {	
 	public static Connection connexion() {

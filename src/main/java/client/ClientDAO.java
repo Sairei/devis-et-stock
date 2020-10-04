@@ -1,4 +1,4 @@
-package main.client;
+package client;
 
 public class ClientDAO {
     private long id;

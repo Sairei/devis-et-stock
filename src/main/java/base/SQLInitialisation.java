@@ -1,9 +1,9 @@
-package main.base;
+package base;
 
 import java.sql.*;
 
-import main.common.Constantes;
-import main.common.MethodesCommunes;
+import common.Constantes;
+import common.MethodesCommunes;
 
 public class SQLInitialisation {
 	public void initialisation() {

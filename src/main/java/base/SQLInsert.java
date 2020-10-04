@@ -1,13 +1,13 @@
-package main.base;
+package base;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import main.client.ClientDAO;
-import main.common.Constantes;
-import main.common.StatutDevis;
-import main.devis.DevisDAO;
+import client.ClientDAO;
+import common.Constantes;
+import common.StatutDevis;
+import devis.DevisDAO;
 
 public class SQLInsert {
 	public static void insertNouveauDevis(DevisDAO devis) {

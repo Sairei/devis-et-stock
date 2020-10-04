@@ -1,11 +1,11 @@
-package main.devis;
+package devis;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import main.base.SQLSelect;
-import main.client.ClientDAO;
-import main.common.Constantes;
+import base.SQLSelect;
+import client.ClientDAO;
+import common.Constantes;
 
 public class DevisDAO {
 	private long id;

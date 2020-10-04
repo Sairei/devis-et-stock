@@ -1,9 +1,12 @@
-package main.client;
+package client;
 
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import base.SQLDelete;
+import base.SQLSelect;
+import common.Constantes;
 import javafx.beans.binding.Bindings;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,9 +17,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import main.base.SQLDelete;
-import main.base.SQLSelect;
-import main.common.Constantes;
 
 public class ListeClientController {
 	@FXML

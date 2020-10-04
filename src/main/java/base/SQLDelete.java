@@ -1,10 +1,10 @@
-package main.base;
+package base;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import main.common.Constantes;
+import common.Constantes;
 
 public class SQLDelete {
 	/** DELETE pour la table DEVIS **/

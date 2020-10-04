@@ -1,11 +1,9 @@
-package main;
-
+import base.GeneralBaseController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import main.base.GeneralBaseController;
 
 public class Start extends Application {
     private GeneralBaseController genBase;

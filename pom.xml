@@ -41,7 +41,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.4</version>
                 <configuration>
-                    <mainClass>main.Start</mainClass>
+                    <mainClass>Start</mainClass>
                 </configuration>
             </plugin>
 		    <plugin>
@@ -54,7 +54,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>main.Start</mainClass>
+							<mainClass>Start</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
@@ -64,7 +64,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>main.Start</mainClass>
+							<mainClass>Start</mainClass>
 						</manifest>
 					</archive>
 					<descriptorRefs>

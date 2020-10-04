@@ -1,4 +1,4 @@
-package main.common;
+package common;
 
 public interface Constantes {
 

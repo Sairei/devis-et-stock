@@ -1,4 +1,4 @@
-package main.accueil;
+package accueil;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import main.menu.MenuController;
+import menu.MenuController;
 
 public class AccueilController {
 	@FXML

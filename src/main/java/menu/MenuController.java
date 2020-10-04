@@ -1,4 +1,4 @@
-package main.menu;
+package menu;
 
 import java.io.IOException;
 

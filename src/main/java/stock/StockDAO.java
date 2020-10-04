@@ -1,4 +1,4 @@
-package main.stock;
+package stock;
 
 public class StockDAO {
     public String toItemList() {

@@ -1,4 +1,4 @@
-package main.devis;
+package devis;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
