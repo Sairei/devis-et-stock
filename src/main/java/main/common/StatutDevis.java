@@ -1,0 +1,12 @@
+package main.common;
+
+public enum StatutDevis {
+	ATTENTE_PAIEMENT,
+	PAIEMENT_ACCEPTER,
+	EN_COUR,
+	ANNULER,
+	ERREUR_PAIEMENT,
+	ERREUR_CLIENT,
+	EXPEDIER,
+	LIVRER;
+}
