@@ -48,7 +48,7 @@
                                           				<ToolBar layoutX="14.0" layoutY="40.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="25.0">
                                             				<items>
 			                                              		<Button onAction="#openListeDevis" mnemonicParsing="false" text="Afficher la liste" />
-			                                                	<Button mnemonicParsing="false" text="+" />
+			                                                	<Button onAction="#addDevis" mnemonicParsing="false" text="+" />
 			                                            	</items>
 			                                          	</ToolBar>
                                           				<AnchorPane layoutY="-3.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="75.0">
@@ -94,7 +94,7 @@
 	                                          			<ToolBar layoutX="14.0" layoutY="40.0" prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="25.0">
 		                                             		<items>
 				                                                <Button onAction="#openListeClient" mnemonicParsing="false" text="Afficher la liste" />
-				                                                <Button mnemonicParsing="false" text="+" />
+				                                                <Button onAction="#addClient" mnemonicParsing="false" text="+" />
 			                                             	</items>
 	                                          			</ToolBar>
 	                                          			<AnchorPane layoutY="-3.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="75.0">
