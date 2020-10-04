@@ -10,6 +10,12 @@ public class ClientDAO {
     private String tel;
     private long id_mesuration;
     
+    public ClientDAO(long id, String genre, String nom, String prenom, String adresse, 
+    		String mail, String tel, long idMensuration) {
+    	this(genre, nom, prenom, adresse, mail, tel, idMensuration);
+    	this.id = id;	
+    }
+    
     public ClientDAO(String genre, String nom, String prenom, String adresse, 
     		String mail, String tel, long idMensuration) {
     	this.civilite = genre;
@@ -54,5 +60,18 @@ public class ClientDAO {
     
     public long getIdMensuration() {
     	return this.id_mesuration;
+    }
+    
+    @Override
+    public String toString() {
+    	String res = "";
+    	if ("Femme".equals(this.getCivilite())) {
+    		res += "Mme. ";
+    	} else {
+    		res += "M. ";
+    	}
+    	res += this.prenom + " " + this.nom;
+    	    	
+        return res;
     }
 }
