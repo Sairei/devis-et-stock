@@ -3,6 +3,7 @@ package client;
 import java.io.IOException;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Optional;
 
 import base.SQLDelete;
 import base.SQLSelect;
@@ -12,11 +13,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import popup.AllertPopup;
 
 public class ListeClientController {
 	@FXML
@@ -55,11 +60,17 @@ public class ListeClientController {
 	
 	@FXML
 	public void delClient() {
-		ClientDAO client = listeClient.getSelectionModel().getSelectedItem();
+		String header = "Suppression d'un client";
+		String body = "Etes vous sûr de vouloir supprimer le client suivant : " + listeClient.getSelectionModel().getSelectedItem().toString();
+		Optional<ButtonType> result = AllertPopup.openConfirmation(header, body);
 		
-		SQLDelete.deleteClientById(client.getId());
-
-		updateListe();
+		if (result.get().getText() == AllertPopup.buttonTypeConfirmer.getText()){
+			ClientDAO client = listeClient.getSelectionModel().getSelectedItem();
+			
+			SQLDelete.deleteClientById(client.getId());
+			
+			updateListe();
+		}
 	}
 	
 	private void updateListe() {
