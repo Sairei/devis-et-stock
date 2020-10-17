@@ -56,7 +56,7 @@ public class SQLInitialisation {
 			    .append(Constantes.colDevisTitre).append(" TEXT NOT NULL, ").append("\n\t")
 			    .append(Constantes.colDevisDescription).append(" TEXT, ").append("\n\t")
 			    .append(Constantes.colDevisStatut).append(" TEXT, ").append("\n\t")
-				.append(Constantes.colDevisIdClient).append(" INTEGER") //TODO : Changer pour l'id du client
+				.append(Constantes.colDevisIdClient).append(" INTEGER")
 				.append(")").toString();
 	}
 	

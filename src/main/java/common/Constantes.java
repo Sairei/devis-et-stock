@@ -27,7 +27,7 @@ public interface Constantes {
     /** String liées à la base de données **/
     /** Table en base DEVIS **/
     public final static String tableDevis = "DEVIS";
-    public final static String colDevisId = "id_client";
+    public final static String colDevisId = "id_devis";
     public final static String colDevisDateCrea = "date_creation_devis";
     public final static String colDevisTitre = "titre";
     public final static String colDevisDescription = "description";
@@ -48,4 +48,5 @@ public interface Constantes {
     /** Table en base MENSURATION **/
     public final static String tableMensuration = "Mensuration";
     public final static String colMensurationId = "id_mensuration";
+    
 }

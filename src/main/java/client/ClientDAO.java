@@ -47,7 +47,19 @@ public class ClientDAO {
     }
 
     public String getAdresse() {
-        return this.adresse;
+    	return this.adresse;
+    }
+    
+    public String[] getAdresseDecomposee() {
+    	String[] adr = new String[3];
+    	String[] sub = this.adresse.split(", ", 2);
+    	String[] sub2 = sub[1].split(" ", 2);
+    	
+        adr[0] = sub[0];
+        adr[1] = sub2[0];
+        adr[2] = sub2[1];
+        
+        return adr;
     }
 
     public String getMail() {

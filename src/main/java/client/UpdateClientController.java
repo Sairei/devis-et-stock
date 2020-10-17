@@ -1,6 +1,6 @@
 package client;
 
-import base.SQLInsert;
+import base.SQLUpdate;
 import common.ChangeListenerPerso;
 import common.Constantes;
 import javafx.fxml.FXML;
@@ -9,7 +9,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
-public class NouveauClientController {
+public class UpdateClientController {
+	private ClientDAO client;
+	
 	@FXML
 	private ToggleGroup civilite;
 	@FXML
@@ -31,10 +33,24 @@ public class NouveauClientController {
 	@FXML
 	private TextField telephone;
 	
+	public UpdateClientController(ClientDAO client) {
+		this.client = client;
+	}
+	
 	@FXML
 	public void initialize() {
-		femme.setSelected(true);
-		setupCleanBorderOnFocus();
+		if(femme.getText().equals(this.client.getCivilite())){
+			this.civilite.selectToggle(femme);
+		} else {
+			this.civilite.selectToggle(homme);			
+		}
+		this.nom.setText(client.getNom());
+		this.prenom.setText(client.getPrenom());
+		this.adresse.setText(client.getAdresseDecomposee()[0]);
+		this.code_postal.setText(client.getAdresseDecomposee()[1]);
+		this.ville.setText(client.getAdresseDecomposee()[2]);
+		this.mail.setText(client.getMail());
+		this.telephone.setText(client.getTel());
 	}
 	
 	@FXML
@@ -43,12 +59,12 @@ public class NouveauClientController {
 		
 		if (controleDesValeurs) {
 			String genre = femme.isSelected() ? femme.getText() : homme.getText();
-			String strAdresse = adresse.getText()
+			String strAdresse = adresse.getText().replaceAll(", ", " ") 
 					+ ", " + code_postal.getText() 
 					+ " " + ville.getText(); 
-			ClientDAO nouveauClient = new ClientDAO(genre, nom.getText(), prenom.getText(), strAdresse, mail.getText(), telephone.getText(), -1);
+			ClientDAO nouveauClient = new ClientDAO(client.getId(), genre, nom.getText(), prenom.getText(), strAdresse.toString(), mail.getText(), telephone.getText(), -1);
 			
-			SQLInsert.insertNouveauClient(nouveauClient);
+			SQLUpdate.updateClient(nouveauClient);
 			
 			Stage stage = (Stage) nom.getScene().getWindow();
 			stage.close();

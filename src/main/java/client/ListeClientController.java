@@ -51,14 +51,29 @@ public class ListeClientController {
 		    
 		    updateListe();
     	} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
 	@FXML
 	public void upClient() {
-		
+		try {
+			Stage stage = new Stage();
+			FXMLLoader loader = new FXMLLoader(getClass().getResource("/client/updateClient.fxml"));
+			
+			UpdateClientController updateController = new UpdateClientController(listeClient.getSelectionModel().getSelectedItem());
+			loader.setController(updateController);
+			
+			Parent root = loader.load();
+			stage.setScene(new Scene(root));
+		    stage.setTitle("Modifier un client");
+		    stage.initModality(Modality.APPLICATION_MODAL);
+		    stage.showAndWait();
+		    
+		    updateListe();
+    	} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	@FXML
@@ -93,7 +108,6 @@ public class ListeClientController {
 				} while(allClient.next());
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
