@@ -2,11 +2,13 @@ package accueil;
 
 import java.io.IOException;
 
+import common.Notification;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import menu.MenuController;
@@ -16,6 +18,8 @@ public class AccueilController {
 	private MenuController menuController;
 	@FXML
 	private Label labelAccueil;
+	@FXML
+	private BorderPane border;
 	
     @FXML
     private void initialize() {
@@ -51,6 +55,16 @@ public class AccueilController {
 		}
 	}
     
+    
+    @FXML
+    public void openListeStock() {
+    	
+    }
+    
+    @FXML
+	public void addStock() {
+		Notification notif = new Notification(border.getTop());
+	}
     
     
     @FXML
