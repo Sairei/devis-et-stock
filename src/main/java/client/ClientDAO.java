@@ -47,7 +47,7 @@ public class ClientDAO {
     }
 
     public String getAdresse() {
-    	return this.adresse;
+    	return this.adresse.replaceAll(",xx ", ", ");
     }
     
     public String[] getAdresseDecomposee() {
@@ -55,7 +55,7 @@ public class ClientDAO {
     	String[] sub = this.adresse.split(", ", 2);
     	String[] sub2 = sub[1].split(" ", 2);
     	
-        adr[0] = sub[0];
+        adr[0] = sub[0].replaceAll(",xx ", ", ");
         adr[1] = sub2[0];
         adr[2] = sub2[1];
         

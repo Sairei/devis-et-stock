@@ -4,6 +4,7 @@ import base.SQLUpdate;
 import common.ChangeListenerPerso;
 import common.Constantes;
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
@@ -12,6 +13,8 @@ import javafx.stage.Stage;
 public class UpdateClientController {
 	private ClientDAO client;
 	
+	@FXML
+	private Label titre;
 	@FXML
 	private ToggleGroup civilite;
 	@FXML
@@ -39,6 +42,7 @@ public class UpdateClientController {
 	
 	@FXML
 	public void initialize() {
+		this.titre.setText(client.toString());
 		if(femme.getText().equals(this.client.getCivilite())){
 			this.civilite.selectToggle(femme);
 		} else {
@@ -59,10 +63,10 @@ public class UpdateClientController {
 		
 		if (controleDesValeurs) {
 			String genre = femme.isSelected() ? femme.getText() : homme.getText();
-			String strAdresse = adresse.getText().replaceAll(", ", " ") 
+			String strAdresse = adresse.getText().replaceAll(", ", ",xx ") 
 					+ ", " + code_postal.getText() 
 					+ " " + ville.getText(); 
-			ClientDAO nouveauClient = new ClientDAO(client.getId(), genre, nom.getText(), prenom.getText(), strAdresse.toString(), mail.getText(), telephone.getText(), -1);
+			ClientDAO nouveauClient = new ClientDAO(client.getId(), genre, nom.getText(), prenom.getText(), strAdresse.toString(), mail.getText(), telephone.getText(), client.getId());
 			
 			SQLUpdate.updateClient(nouveauClient);
 			

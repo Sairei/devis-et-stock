@@ -43,7 +43,7 @@ public class NouveauClientController {
 		
 		if (controleDesValeurs) {
 			String genre = femme.isSelected() ? femme.getText() : homme.getText();
-			String strAdresse = adresse.getText()
+			String strAdresse = adresse.getText().replaceAll(", ", ",xx ") 
 					+ ", " + code_postal.getText() 
 					+ " " + ville.getText(); 
 			ClientDAO nouveauClient = new ClientDAO(genre, nom.getText(), prenom.getText(), strAdresse, mail.getText(), telephone.getText(), -1);
