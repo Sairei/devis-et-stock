@@ -1,0 +1,139 @@
+{
+    "generale": [
+        {
+            "titre": "Stature",
+            "description": "Taille d'une personne du sol jusqu'au haut de la tête."
+        },
+        {
+            "titre": "Hauteur du corps",
+            "description": "Taille d'une personne du sol jusqu'à la hauteur des épaules."
+        }
+    ],
+    "haut": [
+        {
+            "titre": "Tour de cou",
+            "description": "Tour au niveau du cou."
+        },
+        {
+            "titre": "Carrure",
+            "description": "Tour du corps à prendre en passant sur les épaules."
+        },
+        {
+            "titre": "Tour de poitrine",
+            "description": "Tour du corps au niveau de la poitrine, en passant sous les aiselles et sur la pointe des seins."
+        },
+        {
+            "titre": "Tour de buste",
+            "description": "Tour du corps juste en dessous de la poitrine."
+        },
+        {
+            "titre": "Tour de taille",
+            "description": "Tour du corps en dessous des côtes."
+        },
+        {
+            "titre": "Tour de bras",
+            "description": "Tour du bras (entre l'épaule et le coude)."
+        },
+        {
+            "titre": "Tour de poignet",
+            "description": "Tour du poignet."
+        },
+        {
+            "titre": "Ecartement pointe des seins",
+            "description": "Espace entre les seins en mesurant à partir de la pointe."
+        },
+        {
+            "titre": "Longueur base d'encolure pointe des seins",
+            "description": "Mesure de la pointe du sein droit vers le milieu du cou."
+        },
+        {
+            "titre": "Longueur d'épaule",
+            "description": "Mesure de la base du cou  l'extermité de l'épaule."
+        },
+        {
+            "titre": "Longueur du bras",
+            "description": "Mesure de l'épaule au poignet."
+        },
+        {
+            "titre": "Hauteur de la poitrine",
+            "description": "Mesure verticale de la pointe du sein droit vers l'épaule droite."
+        },
+        {
+            "titre": "Hauteur taille",
+            "description": "Mesure verticale de la taille vers le haut de l'épaule (se prend sur le profil)."
+        },
+        {
+            "titre": "Hauteur taille pointe des seins",
+            "description": "Mesure verticale du niveau de la taille à la pointe d'un sein (se prend sur le profil)."
+        }
+    ],
+    "bas": [
+        {
+            "titre": "Tour de hanches",
+            "description": "Tour du corps au niveau des hanches."
+        },
+        {
+            "titre": "Tour de bassin",
+            "description": "Tour du corps au niveau du bassin."
+        },
+        {
+            "titre": "Tour de cuisse",
+            "description": "Tour de la jambe au niveau de la cuisse."
+        },
+        {
+            "titre": "Tour de genou",
+            "description": "Tour de la jambe au niveau du genou."
+        },
+        {
+            "titre": "Tour de mollet",
+            "description": "Tour de la jambe au niveau du mollet."
+        },
+        {
+            "titre": "Tour de cheville",
+            "description": "Tour de la jambe au niveau d'une cheville'."
+        },
+        {
+            "titre": "Montant dos",
+            "description": "Pris assis, hauteur de la chaise à la taille."
+        },
+        {
+            "titre": "Longueur enfourchure",
+            "description": "Mesure en partant du nombril jusqu'au bas du dos, en passant entre les jambes."
+        },
+        {
+            "titre": "Hauteur taille-sol",
+            "description": "Hauteur en partant de la taille jusqu'au sol (pris de profil)."
+        },
+        {
+            "titre": "Hauteur taille-genou",
+            "description": "Hauteur en partant de la taille jusqu'au genou (pris de profil)."
+        },
+        {
+            "titre": "Hauteur genou-cheville",
+            "description": "Hauteur en partant du genou jusqu'à la cheville (pris de profil)."
+        },
+        {
+            "titre": "Hauteur entrejambe-cheville",
+            "description": "Hauteur en partant de l'entrejambe jusqu'à la cheville (pris de profil)."
+        },
+        {
+            "titre": "Hauteur cheville-sol",
+            "description": "Hauteur en partant d'une cheville jusqu'au sol (pris de profil)."
+        }
+    ],
+    "main": [
+        {
+            "titre": "Tour de paume (doigts ouverts)",
+            "description": "Tour de la paume de la main dominante en écartant au maximum les doigts."
+        },{
+            "titre": "Tour de paume (doigts fermés)",
+            "description": "Tour de la paume de la main dominante en serrant les doigts, main ouverte."
+        },{
+            "titre": "Longueur de la paume",
+            "description": "Mesure de la paume de la main dominante, en écartant les doigts au maximum."
+        },{
+            "titre": "Longueur du majeur",
+            "description": "Mesure de la longueur du  majeur de la main dominante."
+        }
+    ]
+}

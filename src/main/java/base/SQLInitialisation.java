@@ -1,6 +1,7 @@
 package base;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 import common.Constantes;
 import common.MethodesCommunes;
@@ -9,7 +10,7 @@ public class SQLInitialisation {
 	public void initialisation() {
 		MethodesCommunes.testFileExistAndCreate(Constantes.sqliteFilePath, false);
 		
-		Connection conn = SQLConnexion.connexion();
+		Connection conn = SQLConnexion.getConnect();
 		Statement state = null;
 		try {
 			state = conn.createStatement();
@@ -28,18 +29,17 @@ public class SQLInitialisation {
 	
 	private void createAllTable(Statement state) {
 		final String reqCreateDevis = createTableDevis();
-		System.out.println(reqCreateDevis + "\n");
-		
+				
 		final String reqCreateClient = createTableClient();
-		System.out.println(reqCreateClient + "\n");
-		
-		final String reqCreateMensuration = createTableMensuration();
-		System.out.println(reqCreateMensuration + "\n");
-		
+				
+		final ArrayList<String> listReqCreateMensuration = createTableMensuration();
+				
 		try {
 			state.execute(reqCreateDevis);
 			state.execute(reqCreateClient);
-			state.execute(reqCreateMensuration);
+			for(String reqCreateMensuration : listReqCreateMensuration) {
+				state.execute(reqCreateMensuration);
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -77,11 +77,68 @@ public class SQLInitialisation {
 	}
 	
 	/** Fonction de contruction de la requete de create de la table mensuration **/
-	private String createTableMensuration() {
-		return new StringBuilder()
+	private ArrayList<String> createTableMensuration() {
+		String reqMensurationGenerale = new StringBuilder()
 				.append("CREATE TABLE IF NOT EXISTS ")
-				.append(Constantes.tableMensuration).append("(").append("\n\t")
-				.append(Constantes.colMensurationId).append(" INTEGER PRIMARY KEY")
+				.append(Constantes.tableMensurationGenerale).append("(").append("\n\t")
+				.append(Constantes.colMensurationId).append(" INTEGER PRIMARY KEY, ").append("\n\t")
+				.append(Constantes.colStature).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colHauteurCorps).append(" INTEGER")
 				.append(")").toString();
+		String reqMensurationHaut= new StringBuilder()
+				.append("CREATE TABLE IF NOT EXISTS ")
+				.append(Constantes.tableMensurationHaut).append("(").append("\n\t")
+				.append(Constantes.colMensurationId).append(" INTEGER PRIMARY KEY, ").append("\n\t")
+				.append(Constantes.colTourCou).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colCarrure).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colTourPoitrine).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colTourBuste).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colTourTaille).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colTourBras).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colTourPoignet).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colEcartPointeSeins).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colLongueurEncolureSeins).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colLongueurEpaule).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colLongueurBras).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colHauteurPoitrine).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colHauteurTaille).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colHauteurTailleSein).append(" INTEGER")
+				.append(")").toString();
+		String reqMensurationBas = new StringBuilder()
+				.append("CREATE TABLE IF NOT EXISTS ")
+				.append(Constantes.tableMensurationBas).append("(").append("\n\t")
+				.append(Constantes.colMensurationId).append(" INTEGER PRIMARY KEY, ").append("\n\t")
+				.append(Constantes.colTourHanches).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colTourBassin).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colTourCuisse).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colTourGenou).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colTourMollet).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colTourCheville).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colMontantDos).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colLongueurEnfourchure).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colHauteurTailleSol).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colHauteurTailleGenou).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colHauteurGenouCheville).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colHauteurEntrejambeCheville).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colHauteurChevilleSol).append(" INTEGER")
+				.append(")").toString();
+		String reqMensurationMain = new StringBuilder()
+				.append("CREATE TABLE IF NOT EXISTS ")
+				.append(Constantes.tableMensurationMain).append("(").append("\n\t")
+				.append(Constantes.colMensurationId).append(" INTEGER PRIMARY KEY, ").append("\n\t")
+				.append(Constantes.colTourPaumeOuvert).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colTourPaumeFerme).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colLongueurPaume).append(" INTEGER, ").append("\n\t")
+				.append(Constantes.colLongueurMajeur).append(" INTEGER")				
+				.append(");").toString();
+
+		
+		ArrayList<String> arr = new ArrayList<String>();
+		arr.add(reqMensurationGenerale);
+		arr.add(reqMensurationHaut);
+		arr.add(reqMensurationBas);
+		arr.add(reqMensurationMain);
+		
+		return arr; 
 	}
 }

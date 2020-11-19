@@ -46,7 +46,42 @@ public interface Constantes {
     public final static String colClientIdMensuration = "ref_id_mensuration";    
     
     /** Table en base MENSURATION **/
-    public final static String tableMensuration = "Mensuration";
     public final static String colMensurationId = "id_mensuration";
-    
+    public final static String tableMensurationGenerale = "MENSURATION_GENERALE";
+    public final static String colStature = "stature";
+    public final static String colHauteurCorps = "hauteur_corps";
+    public final static String tableMensurationHaut = "MENSURATION_HAUT";
+    public final static String colTourCou = "tour_cou";
+    public final static String colCarrure = "carrure";    
+    public final static String colTourPoitrine = "tour_poitrine";
+    public final static String colTourBuste = "tour_buste";
+    public final static String colTourTaille = "tour_taille";
+    public final static String colTourBras = "tour_bras";
+    public final static String colTourPoignet = "tour_poignet";
+    public final static String colEcartPointeSeins = "ecartement_pointe_seins";
+    public final static String colLongueurEncolureSeins = "longueur_base_encolure_pointe_seins";
+    public final static String colLongueurEpaule = "longueur_epaule";
+    public final static String colLongueurBras = "longueur_bras";
+    public final static String colHauteurPoitrine = "hauteur_poitrine";
+    public final static String colHauteurTaille = "hauteur_taille";
+    public final static String colHauteurTailleSein = "hauteur_taille_pointe_seins";
+    public final static String tableMensurationBas = "MENSURATION_BAS";
+    public final static String colTourHanches = "tour_hanches";
+    public final static String colTourBassin = "tour_bassin";
+    public final static String colTourCuisse = "tour_cuisse";
+    public final static String colTourGenou = "tour_genou";
+    public final static String colTourMollet = "tour_mollet";
+    public final static String colTourCheville = "tour_cheville";
+    public final static String colMontantDos = "montant_dos";
+    public final static String colLongueurEnfourchure= "longueur_enfourchure";
+    public final static String colHauteurTailleSol = "hauteur_taille_sol";
+    public final static String colHauteurTailleGenou = "hauteur_taille_genou";
+    public final static String colHauteurGenouCheville = "hauteur_genou_cheville";
+    public final static String colHauteurEntrejambeCheville = "hauteur_entrejambre_cheville";
+    public final static String colHauteurChevilleSol = "hauteur_cheville_sol";
+    public final static String tableMensurationMain = "MENSURATION_MAIN";
+    public final static String colTourPaumeOuvert = "tour_paume_ouvert";
+    public final static String colTourPaumeFerme = "tour_paume_ferme";
+    public final static String colLongueurPaume = "longueur_paume";
+    public final static String colLongueurMajeur = "longueur_majeur";
 }

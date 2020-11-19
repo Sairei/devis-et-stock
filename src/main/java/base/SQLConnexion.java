@@ -4,12 +4,28 @@ import java.sql.*;
 
 import common.Constantes;
 
-public class SQLConnexion {	
-	public static Connection connexion() {
+public class SQLConnexion {
+	public static Connection connection = null;
+	
+	public static Connection getConnect() {
 		try {
+			if (connection == null || connection.isClosed()) {
+				new SQLConnexion();
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return connection;
+	}
+	
+	private SQLConnexion() {
+		try {
+			
 			Class.forName("org.sqlite.JDBC");
-			Connection conn = DriverManager.getConnection("jdbc:sqlite:" + Constantes.sqliteFilePath);
-			return conn;
+			connection = DriverManager.getConnection("jdbc:sqlite:" + Constantes.sqliteFilePath);
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -17,7 +33,5 @@ public class SQLConnexion {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		return null;
 	}
 }

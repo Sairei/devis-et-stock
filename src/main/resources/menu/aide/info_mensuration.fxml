@@ -8,11 +8,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<ScrollPane fx:id="scroll" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menu.aide.InfoMensurationController">
+<ScrollPane fx:id="scroll" prefHeight="342.0" prefWidth="548.0" stylesheets="@../../_css/info.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menu.aide.InfoMensurationController">
    <content>
       <AnchorPane minHeight="0.0" minWidth="0.0">
          <children>
-            <VBox layoutX="15.0" layoutY="15.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+            <VBox layoutX="15.0" layoutY="15.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
                <children>
                   <Text fx:id="textPres" strokeType="OUTSIDE" strokeWidth="0.0" text="Les informations présentes ici vont présenter les différentes mensurations existantes et comment les prendre sur une personne.">
                      <VBox.margin>
@@ -21,26 +21,26 @@
                   </Text>
                   <Accordion>
                     <panes>
+                        <TitledPane animated="false" text="Général">
+                           <content>
+                              <AnchorPane fx:id="mesureGenerale" minHeight="0.0" minWidth="0.0" prefWidth="200.0" />
+                           </content>
+                        </TitledPane>
                       <TitledPane animated="false" text="Haut">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                          <AnchorPane fx:id="mesureHaut" minHeight="0.0" minWidth="0.0" prefWidth="200.0" />
                         </content>
                       </TitledPane>
                       <TitledPane animated="false" text="Bas">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                          <AnchorPane fx:id="mesureBas" minHeight="0.0" minWidth="0.0" prefWidth="200.0" />
                         </content>
                       </TitledPane>
                       <TitledPane animated="false" text="Main">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                          <AnchorPane fx:id="mesureMain" minHeight="0.0" minWidth="0.0" prefWidth="200.0" />
                         </content>
                       </TitledPane>
-                        <TitledPane animated="false" text="Pied">
-                           <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
-                           </content>
-                        </TitledPane>
                     </panes>
                      <VBox.margin>
                         <Insets />

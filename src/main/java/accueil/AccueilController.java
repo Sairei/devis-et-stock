@@ -2,7 +2,6 @@ package accueil;
 
 import java.io.IOException;
 
-import common.Notification;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -63,7 +62,7 @@ public class AccueilController {
     
     @FXML
 	public void addStock() {
-		Notification notif = new Notification(border.getTop());
+    	
 	}
     
     
