@@ -19,7 +19,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import popup.AllertPopup;
+import pdf.CreerDocument;
+import popup.AlertPopup;
 
 public class ListeClientController {
 	@FXML
@@ -30,13 +31,16 @@ public class ListeClientController {
 	private Button supprimerClient;
 	@FXML
 	private Button modifierClient;
+	@FXML
+	private Button exportPdf;
 	
 	@FXML
 	public void initialize() {		
 		supprimerClient.disableProperty().bind(Bindings.isEmpty(listeClient.getSelectionModel().getSelectedItems()));
 		modifierClient.disableProperty().bind(Bindings.isEmpty(listeClient.getSelectionModel().getSelectedItems()));
+		exportPdf.disableProperty().bind(Bindings.isEmpty(listeClient.getSelectionModel().getSelectedItems()));
 		
-		updateListe();
+		updateListeClient();
 	}
 	
 	@FXML
@@ -49,7 +53,7 @@ public class ListeClientController {
 		    stage.initModality(Modality.APPLICATION_MODAL);
 		    stage.showAndWait();
 		    
-		    updateListe();
+		    updateListeClient();
     	} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -70,7 +74,7 @@ public class ListeClientController {
 		    stage.initModality(Modality.APPLICATION_MODAL);
 		    stage.showAndWait();
 		    
-		    updateListe();
+		    updateListeClient();
     	} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -80,15 +84,32 @@ public class ListeClientController {
 	public void delClient() {
 		String header = "Suppression d'un client";
 		String body = "Etes vous sûr de vouloir supprimer le client suivant : " + listeClient.getSelectionModel().getSelectedItem().toString();
-		Optional<ButtonType> result = AllertPopup.openConfirmation(header, body);
+		Optional<ButtonType> result = AlertPopup.openConfirmation(header, body);
 		
-		if (result.get().getText() == AllertPopup.buttonTypeConfirmer.getText()){
+		if (result.get().getText() == AlertPopup.buttonTypeConfirmer.getText()){
 			ClientDAO client = listeClient.getSelectionModel().getSelectedItem();
 			
 			SQLDelete.deleteClientById(client.getId());
 			
-			updateListe();
+			updateListeClient();
 		}
+	}
+	
+	@FXML
+	public void export() {
+		ClientDAO client = listeClient.getSelectionModel().getSelectedItem();
+		CreerDocument.creerPdfClient(client);
+	}
+	
+	
+	/**
+	 * Fonction de mise à jour de l'écran de liste des clients
+	 *   -> Appel à la fonction de mise à jour de la liste
+	 *   -> Appel à la fonction de mise à jour des informations liées aux clients
+	 */
+	private void updateListeClient() {
+		updateListe();
+		updateInfo();
 	}
 	
 	private void updateListe() {
@@ -110,5 +131,10 @@ public class ListeClientController {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private void updateInfo() {
+		// Nombre de client enregistré
+		nbClientTotal.setText(String.valueOf(listeClient.getItems().size()));
 	}
 }
